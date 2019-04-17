@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Reddit Gaming</string>
+
+    <!--Network Error Messages-->
+    <string name="api_retry_error">Please retry!</string>
+    <string name="api_default_error">Something wrong happened!</string>
+    <string name="some_error">Some Error Occurred!</string>
+    <string name="connection_error">Internet connection lost!</string>
+    <string name="try_again">Try Again</string>
+
+    <!--Adapter Textviews-->
+    <string name="score">"Score: "</string>
+    <string name="subreddit">"Subreddit: "</string>
+
+
+</resources>

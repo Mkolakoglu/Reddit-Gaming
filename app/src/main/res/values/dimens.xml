@@ -1,0 +1,25 @@
+<resources>
+    <!-- ActionBar -->
+    <dimen name="action_button_size">48dp</dimen>
+    <dimen name="action_icon_size">24dp</dimen>
+
+    <!-- Margin, paddings -->
+    <dimen name="smallest_padding">2dp</dimen>
+    <dimen name="very_small_padding">4dp</dimen>
+    <dimen name="small_padding">8dp</dimen>
+    <dimen name="medium_padding">16dp</dimen>
+    <dimen name="large_padding">32dp</dimen>
+    <dimen name="very_large_padding">48dp</dimen>
+    <dimen name="huge_padding">64dp</dimen>
+
+    <!-- Text size -->
+    <dimen name="very_small_text_size">10sp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
+    <dimen name="medium_text_size">14sp</dimen>
+    <dimen name="large_text_size">18sp</dimen>
+    <dimen name="title_text_size">20sp</dimen>
+    <dimen name="very_large_text_size">22sp</dimen>
+    <dimen name="huge_text_size">26sp</dimen>
+    <dimen name="giant_text_size">30sp</dimen>
+
+</resources>
