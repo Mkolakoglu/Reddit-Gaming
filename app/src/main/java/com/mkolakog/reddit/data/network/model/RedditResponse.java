@@ -3,7 +3,7 @@ package com.mkolakog.reddit.data.network.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class RedditResponse {
 
@@ -23,7 +23,7 @@ public class RedditResponse {
     public static class Data {
         @Expose
         @SerializedName("children")
-        private List<RedditData> redditDataList;
+        private ArrayList<RedditData> redditDataList;
 
         @Expose
         @SerializedName("after")
@@ -38,11 +38,11 @@ public class RedditResponse {
             this.after = after;
         }
 
-        public List<RedditData> getRedditDataList() {
+        public ArrayList<RedditData> getRedditDataList() {
             return redditDataList;
         }
 
-        public void setRedditDataList(List<RedditData> redditList) {
+        public void setRedditDataList(ArrayList<RedditData> redditList) {
             this.redditDataList = redditList;
         }
     }

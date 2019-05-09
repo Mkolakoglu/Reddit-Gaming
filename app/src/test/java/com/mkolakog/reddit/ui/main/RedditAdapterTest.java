@@ -33,4 +33,6 @@ public class RedditAdapterTest {
         Assert.assertEquals(fakeResponse.getData().getRedditDataList().size(), redditAdapter.getItemCount());
     }
 
+
+
 }

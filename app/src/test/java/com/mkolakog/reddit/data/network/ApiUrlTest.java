@@ -8,6 +8,7 @@ public class ApiUrlTest {
     @Test
     public void testAfterURL() {
         String url = ApiURL.getAfterUrl("after");
+
         Assert.assertEquals("Api URL does not work properly", "https://www.reddit.com/r/gaming/top.json?after=after", url);
     }
 

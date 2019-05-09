@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.google.gson.Gson;
+import com.mkolakog.reddit.data.network.model.DataHolder;
 import com.mkolakog.reddit.data.network.model.RedditResponse;
 import com.mkolakog.reddit.di.ActivityContext;
 import com.mkolakog.reddit.di.PerActivity;
@@ -79,6 +80,11 @@ public class ActivityModule {
     @Provides
     LinearLayoutManager provideLinearLayoutManager(AppCompatActivity activity) {
         return new LinearLayoutManager(activity);
+    }
+
+    @Provides
+    DataHolder provideDataHolder() {
+        return new DataHolder(new ArrayList<>());
     }
 
 }

@@ -10,6 +10,7 @@ import com.mkolakog.reddit.R;
 import com.mkolakog.reddit.data.network.model.RedditResponse;
 import com.mkolakog.reddit.ui.base.BaseViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -21,10 +22,10 @@ public class RedditAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         void onItemClick(String itemId);
     }
 
-    private List<RedditResponse.RedditData> mRedditList;
+    private ArrayList<RedditResponse.RedditData> mRedditList;
     private Callback mCallback;
 
-    public RedditAdapter(List<RedditResponse.RedditData> redditList) {
+    public RedditAdapter(ArrayList<RedditResponse.RedditData> redditList) {
         mRedditList = redditList;
     }
 
@@ -48,11 +49,12 @@ public class RedditAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void setList(List<RedditResponse.RedditData> redditList) {
+    public void setList(ArrayList<RedditResponse.RedditData> redditList) {
         this.mRedditList = redditList;
+        notifyDataSetChanged();
     }
 
-    public List<RedditResponse.RedditData> getList() {
+    public ArrayList<RedditResponse.RedditData> getList() {
         return mRedditList;
     }
 
