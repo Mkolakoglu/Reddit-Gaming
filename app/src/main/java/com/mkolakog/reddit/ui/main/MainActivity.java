@@ -109,18 +109,4 @@ public class MainActivity extends BaseActivity implements MainMvpView, RedditAda
         rvReddit.addOnScrollListener(mPaginationListener);
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        mPresenter.onSave(outState);
-
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        mPresenter.onRestore(savedInstanceState);
-
-    }
-
 }
