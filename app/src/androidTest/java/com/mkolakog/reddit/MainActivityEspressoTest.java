@@ -15,6 +15,7 @@ import java.util.concurrent.CountDownLatch;
 
 import androidx.test.InstrumentationRegistry;
 import androidx.test.espresso.ViewAssertion;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
@@ -33,6 +34,7 @@ public class MainActivityEspressoTest {
     @Test
     public void checkRvItemCountOnActivityStart_shouldBe25() {
         mainActivityTestRule.launchActivity(null);
+
         waitFor(2000);
 
         onView(withId(R.id.rvReddit)).check(assertItemCountRecyclerView(25));
@@ -48,6 +50,7 @@ public class MainActivityEspressoTest {
     @Test
     public void checkProgressBarAfterDataReceived_shouldBeGone() {
         mainActivityTestRule.launchActivity(null);
+
         waitFor(3000);
 
         onView(withId(R.id.pb_loading)).check(doesNotExist());

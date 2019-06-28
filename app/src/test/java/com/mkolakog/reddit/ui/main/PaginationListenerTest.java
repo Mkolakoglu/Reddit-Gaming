@@ -1,6 +1,6 @@
 package com.mkolakog.reddit.ui.main;
 
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import org.junit.Assert;
 import org.junit.Before;

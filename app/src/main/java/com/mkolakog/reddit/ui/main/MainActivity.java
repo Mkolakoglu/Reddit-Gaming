@@ -3,22 +3,20 @@ package com.mkolakog.reddit.ui.main;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.mkolakog.reddit.R;
 import com.mkolakog.reddit.data.network.ApiURL;
 import com.mkolakog.reddit.data.network.model.RedditResponse;
 import com.mkolakog.reddit.ui.base.BaseActivity;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.inject.Inject;
 
@@ -32,9 +30,6 @@ public class MainActivity extends BaseActivity implements MainMvpView, RedditAda
 
     @Inject
     RedditAdapter redditAdapter;
-
-    @Inject
-    Gson sGson;
 
     @Inject
     LinearLayoutManager linearLayoutManager;
@@ -68,11 +63,6 @@ public class MainActivity extends BaseActivity implements MainMvpView, RedditAda
         setupPaginationListener();
         setUpRecyclerView();
         redditAdapter.setCallback(this);
-    }
-
-    @Override
-    public void updateResponseData(RedditResponse redditResponse) {
-        redditAdapter.addItems(redditResponse.getData().getRedditDataList());
     }
 
     @Override

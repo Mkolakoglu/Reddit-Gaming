@@ -4,13 +4,14 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.mkolakog.reddit.R;
 
 public final class CommonUtils {
@@ -44,8 +45,8 @@ public final class CommonUtils {
         }
         View v = snackbar.getView();
         v.setBackgroundResource(R.color.colorPrimary);
-        ((TextView) v.findViewById(android.support.design.R.id.snackbar_text)).setTextColor(ContextCompat.getColor(v.getContext(), android.R.color.white));
-        ((TextView) v.findViewById(android.support.design.R.id.snackbar_action)).setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
+        ((TextView) v.findViewById(com.google.android.material.R.id.snackbar_text)).setTextColor(ContextCompat.getColor(v.getContext(), android.R.color.white));
+        ((TextView) v.findViewById(com.google.android.material.R.id.snackbar_action)).setTextColor(ContextCompat.getColor(v.getContext(), R.color.black));
         return snackbar;
     }
 

@@ -1,8 +1,6 @@
 package com.mkolakog.reddit.ui.base;
 
-import android.support.annotation.StringRes;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import androidx.annotation.StringRes;
 
 public interface BaseMvpView {
 

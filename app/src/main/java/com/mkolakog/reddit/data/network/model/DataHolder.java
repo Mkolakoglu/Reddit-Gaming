@@ -10,9 +10,8 @@ public class DataHolder {
     private String nextAfterParam = "";
 
     public DataHolder (ArrayList<RedditResponse.RedditData> redditDataList) {
-        mRedditDataList = new ArrayList<>();
+        mRedditDataList = redditDataList;
     }
-
 
     public ArrayList<RedditResponse.RedditData> getRedditDataList() {
         return mRedditDataList;

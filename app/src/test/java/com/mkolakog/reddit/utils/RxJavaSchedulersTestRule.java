@@ -11,6 +11,7 @@ import io.reactivex.schedulers.TestScheduler;
 
 public class RxJavaSchedulersTestRule implements TestRule {
 
+
     @Override
     public Statement apply(final Statement base, Description d) {
         return new Statement() {

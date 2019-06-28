@@ -1,7 +1,7 @@
 package com.mkolakog.reddit.ui.main;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class PaginationListener extends RecyclerView.OnScrollListener {
 

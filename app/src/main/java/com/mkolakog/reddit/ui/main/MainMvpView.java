@@ -8,8 +8,6 @@ import java.util.List;
 
 public interface MainMvpView extends BaseMvpView {
 
-    void updateResponseData(RedditResponse redditResponse);
-
     void updateData(ArrayList<RedditResponse.RedditData> redditDataList);
 
 }

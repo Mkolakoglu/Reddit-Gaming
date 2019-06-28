@@ -1,12 +1,11 @@
 package com.mkolakog.reddit.di.module;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 
-import com.google.gson.Gson;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.mkolakog.reddit.data.network.model.DataHolder;
-import com.mkolakog.reddit.data.network.model.RedditResponse;
 import com.mkolakog.reddit.di.ActivityContext;
 import com.mkolakog.reddit.di.PerActivity;
 import com.mkolakog.reddit.ui.main.MainMvpPresenter;
@@ -20,9 +19,6 @@ import com.mkolakog.reddit.utils.rx.AppSchedulerProvider;
 import com.mkolakog.reddit.utils.rx.SchedulerProvider;
 
 import java.util.ArrayList;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -74,7 +70,7 @@ public class ActivityModule {
 
     @Provides
     RedditAdapter provideRedditAdapter() {
-        return new RedditAdapter((new ArrayList<RedditResponse.RedditData>()));
+        return new RedditAdapter((new ArrayList<>()));
     }
 
     @Provides

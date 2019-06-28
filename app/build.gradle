@@ -81,9 +81,11 @@ dependencies {
     testImplementation("androidx.test.ext:junit:1.1.1-alpha03")
     testAnnotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
 
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test:rules:1.1.1'
-    androidTestImplementation 'androidx.test:core:1.1.0'
+    testImplementation 'com.github.Plastix.RxSchedulerRule:rx2:1.0.2'
+
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test:core:1.2.0'
 
     // UI Testing
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"

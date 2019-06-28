@@ -5,6 +5,7 @@ import com.mkolakog.reddit.data.network.model.RedditResponse;
 import java.util.ArrayList;
 
 public class RedditResponseBuilder {
+
     RedditResponse redditResponse;
 
     public RedditResponseBuilder() {
@@ -19,7 +20,7 @@ public class RedditResponseBuilder {
     }
 
     public RedditResponseBuilder itemCount(int count) {
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < count; i++) {
             withChild(new RedditDataBuilder().build());
         }
         return this;

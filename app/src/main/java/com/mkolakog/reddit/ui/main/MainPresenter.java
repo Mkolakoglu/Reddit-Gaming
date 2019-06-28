@@ -1,7 +1,6 @@
 package com.mkolakog.reddit.ui.main;
 
 import com.androidnetworking.error.ANError;
-import com.google.gson.Gson;
 import com.mkolakog.reddit.data.DataManager;
 import com.mkolakog.reddit.data.network.model.DataHolder;
 import com.mkolakog.reddit.data.network.model.RedditResponse;
@@ -19,22 +18,21 @@ import io.reactivex.schedulers.Schedulers;
 public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
         implements MainMvpPresenter<V>{
 
+    private static final String TAG = "MainPresenter";
     private boolean isLoading = false;
-
-    @Inject
-    Gson gson;
-    @Inject
-    DataHolder dataHolder;
 
     private Consumer<RedditResponse> consumerSuccess;
     private Consumer<Throwable> consumerFail;
 
+    DataHolder dataHolder;
 
     @Inject
     public MainPresenter(DataManager dataManager,
                          SchedulerProvider schedulerProvider,
-                         CompositeDisposable compositeDisposable) {
+                         CompositeDisposable compositeDisposable,
+                         DataHolder dataHolder) {
         super(dataManager, schedulerProvider, compositeDisposable);
+        this.dataHolder = dataHolder;
     }
 
     @Override
@@ -58,11 +56,11 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
         }
     }
 
-    public void requestGamingList(String afterParam) {
-        isLoading = true;
-        getMvpView().showLoading();
+
+    public void requestGamingList(String after) {
+        handleShowLoading();
         getCompositeDisposable().add(getDataManager()
-                .getGamingListCall(afterParam)
+                .getGamingListCall(after)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(consumerSuccess, consumerFail));
@@ -74,11 +72,10 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
             if (!isViewAttached()) {
                 return;
             }
+            handleHideLoading();
             if (redditResponse.getData() != null) {
                 handleResponse(redditResponse);
             }
-            getMvpView().hideLoading();
-            isLoading = false;
         };
 
         //onFail
@@ -86,9 +83,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
             if (!isViewAttached()) {
                 return;
             }
-            getMvpView().hideLoading();
-            isLoading = false;
-
+            handleHideLoading();
             if (throwable instanceof ANError) {
                 ANError anError = (ANError) throwable;
                 handleApiError(anError);
@@ -101,5 +96,15 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V>
         getMvpView().updateData(dataHolder.getRedditDataList());
     }
 
+
+    private void handleShowLoading() {
+        isLoading = true;
+        getMvpView().showLoading();
+    }
+
+    private void handleHideLoading() {
+        getMvpView().hideLoading();
+        isLoading = false;
+    }
 
 }

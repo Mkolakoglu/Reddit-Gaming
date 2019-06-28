@@ -11,7 +11,6 @@ public class RedditResponse {
     @SerializedName("data")
     private Data data;
 
-
     public Data getData() {
         return data;
     }
@@ -28,7 +27,6 @@ public class RedditResponse {
         @Expose
         @SerializedName("after")
         private String after = "";
-
 
         public String getAfter() {
             return after;

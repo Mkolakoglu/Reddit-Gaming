@@ -1,10 +1,11 @@
 package com.mkolakog.reddit.ui.main;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.mkolakog.reddit.R;
 import com.mkolakog.reddit.data.network.model.RedditResponse;
